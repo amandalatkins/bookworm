@@ -10,19 +10,19 @@ module.exports = {
     insertOne: (tableName,newData,callback) => {
         db.query("INSERT INTO ?? SET ?",[tableName,newData], (err, res) => {
             if (err) throw err;
-            callback();
+            callback(res);
         });
     },
     updateOne: (tableName,newData,condition,callback) => {
         db.query("UPDATE ?? SET ? WHERE ?",[tableName,newData,condition], (err,res) => {
             if (err) throw err;
-            callback();
+            callback(res);
         });
     },
     deleteOne: (tableName,condition) => {
         db.query("DELETE FROM ?? WHERE ?",[tableName,condition],(err,res) => {
             if (err) throw err;
-            callback();
+            callback(res);
         });
     }
 }
