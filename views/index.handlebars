@@ -1,0 +1,30 @@
+<h1>BookWorm</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-6">
+            <h3>To Read</h3>
+            <ul>
+
+                {{#each books}}
+                    {{#unless isRead}}
+                        <li>{{id}}. <a href="{{link}}" target="_blank">{{name}}</a> <button class="btn btn-secondary read-me" data-id="{{id}}">I Read It!</button></li>
+                    {{/unless}}
+                {{/each}}
+
+            </ul>
+        </div>
+        <div class="col col-lg-6">
+            <h3>Read</h3>
+            <ul>
+
+                {{#each books}}
+                    {{#if isRead}}
+                        <li>{{id}}. <a href="{{link}}" target="_blank">{{name}}</a> <button class="btn btn-secondary delete-me" data-bookId="{{id}}">Delete</button></li>
+                    {{/if}}
+                {{/each}}
+
+            </ul>
+        </div>
+    </div>
+</div>
