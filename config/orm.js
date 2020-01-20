@@ -13,14 +13,14 @@ module.exports = {
             callback();
         });
     },
-    updateOne: (tableName,colName,where,callback) => {
-        db.query("UPDATE ?? SET ? WHERE ?",[tableName,colName,where], (err,res) => {
+    updateOne: (tableName,newData,condition,callback) => {
+        db.query("UPDATE ?? SET ? WHERE ?",[tableName,newData,condition], (err,res) => {
             if (err) throw err;
             callback();
         });
     },
-    deleteOne: (tableName,where) => {
-        db.query("DELETE FROM ?? WHERE ?",[tableName,where],(err,res) => {
+    deleteOne: (tableName,condition) => {
+        db.query("DELETE FROM ?? WHERE ?",[tableName,condition],(err,res) => {
             if (err) throw err;
             callback();
         });
