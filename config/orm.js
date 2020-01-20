@@ -1,8 +1,8 @@
 const db = require('./connection.js');
 
 module.exports = {
-    selectAll: (tableName,where,callback) => {
-        db.query("SELECT * FROM ?? WHERE ?",[tableName, where],(err, res) => {
+    selectAll: (tableName,callback) => {
+        db.query("SELECT * FROM ??",[tableName],(err, res) => {
             if (err) throw err;
             callback(res);
         });
