@@ -13,13 +13,16 @@ router.get("/",(req,res) => {
 });
 
 router.post("/api/books",(req,res) => {
+    
     book.create(req.body, data => {
         res.json({id: data.insertId});
     });
 });
 
 router.put("/api/books/:id",(req,res) => {
-    book.update(req.body,res.params,data => {
+    console.log(req.body);
+    console.log(req.params);
+    book.update(req.body,req.params,function(data) {
         if (data.changedRows === 0) {
             // If no rows were changed, then the ID must not exist, so 404
             res.status(404).end();
@@ -30,7 +33,8 @@ router.put("/api/books/:id",(req,res) => {
 });
 
 router.delete("/api/books/:id",(req,res) => {
-    book.delete(req.params, () => {
+    console.log(req.params);
+    book.delete(req.params, result => {
         res.status(200).end();
     });
 });

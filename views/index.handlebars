@@ -1,6 +1,32 @@
 <h1>BookWorm</h1>
 
 <div class="container">
+    <form>
+        <div class="row">
+            <div class="col col-md-6 col-lg-4">
+                <div class="form-group">
+                    <label for="bookName">Book Title:</label>
+                    <input type="input" class="form-control" id="bookName" placeholder="East of Eden" value="East of Eden">
+                </div>
+            </div>
+            <div class="col col-md-6 col-lg-4">
+                <div class="form-group">
+                    <label for="bookLink">Link:</label>
+                    <input type="input" class="form-control" id="bookLink" placeholder="https://www.indiebound.org/book/9780140186390" value="https://www.indiebound.org/book/9780140186390">
+                    <small>Please support your local bookstore!</small>
+                </div>
+            </div>
+            <div class="col col-lg-4 text-center text-md-left">
+                <div class="form-group">
+                    <br>
+                    <button class="btn btn-primary" id="addNewBook">Add Book</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container">
     <div class="row">
         <div class="col col-lg-6">
             <h3>To Read</h3>
@@ -20,7 +46,7 @@
 
                 {{#each books}}
                     {{#if isRead}}
-                        <li>{{id}}. <a href="{{link}}" target="_blank">{{name}}</a> <button class="btn btn-secondary delete-me" data-bookId="{{id}}">Delete</button></li>
+                        <li>{{id}}. <a href="{{link}}" target="_blank">{{name}}</a> <button class="btn btn-secondary delete-me" data-id="{{id}}">Delete</button></li>
                     {{/if}}
                 {{/each}}
 
