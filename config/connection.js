@@ -2,11 +2,11 @@ const mysql = require("mysql");
 
 if (process.env._ && process.env._.indexOf("heroku")) {
     var connectionDetails = {
-        host: "us-cdbr-iron-east-05.cleardb.net",
+        host: "rtzsaka6vivj2zp1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         port: 3306,
-        user: "b99175fad98522",
-        password: "571db4b3",
-        database: "heroku_2cbe3492304daf9"     
+        user: "wp5vxm4g9ys0nwf6",
+        password: "kkarftwz4hfl7oro",
+        database: "on3qd1e5yxfkuj2p"     
     }
 } else {
     require("dotenv").config();
@@ -18,8 +18,6 @@ if (process.env._ && process.env._.indexOf("heroku")) {
         database: "bookworm"
     }
 }
-
-
 
 const db = mysql.createConnection(connectionDetails);
 
