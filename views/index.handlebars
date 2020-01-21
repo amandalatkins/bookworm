@@ -1,56 +1,54 @@
-<h1>BookWorm</h1>
-
-<div class="container">
-    <form>
-        <div class="row">
-            <div class="col col-md-6 col-lg-4">
-                <div class="form-group">
-                    <label for="bookName">Book Title:</label>
-                    <input type="input" class="form-control" id="bookName" placeholder="East of Eden" value="East of Eden">
-                </div>
-            </div>
-            <div class="col col-md-6 col-lg-4">
-                <div class="form-group">
-                    <label for="bookLink">Link:</label>
-                    <input type="input" class="form-control" id="bookLink" placeholder="https://www.indiebound.org/book/9780140186390" value="https://www.indiebound.org/book/9780140186390">
-                    <small>Please support your local bookstore!</small>
-                </div>
-            </div>
-            <div class="col col-lg-4 text-center text-md-left">
-                <div class="form-group">
-                    <br>
-                    <button class="btn btn-primary" id="addNewBook">Add Book</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-
 <div class="container">
     <div class="row">
-        <div class="col col-lg-6">
+        <div class="col-12 col-lg-6">
             <h3>To Read</h3>
-            <ul>
+            <hr>
+            <div class="row">
 
                 {{#each books}}
                     {{#unless isRead}}
-                        <li>{{id}}. <a href="{{link}}" target="_blank">{{name}}</a> <button class="btn btn-secondary read-me" data-id="{{id}}">I Read It!</button></li>
+                        <div class="col col-md-6 col-lg-4 py-3">
+                            <div class="card h-100 book">
+                                <div class="card-body text-center h-100 pb-0">
+                                    <p class="card-subtitle mb-2">({{id}})</p>
+                                    <h5 class="card-title">{{name}}</h5>
+                                    <p class="mb-0"><a href="{{link}}" target="_blank">Learn More</a></p class="mb-0">
+                                </div>
+                                <button class="btn btn-light m-3 read-me" data-id="{{id}}">I Read It!</button>
+                            </div>
+                        </div>
                     {{/unless}}
                 {{/each}}
 
-            </ul>
+            </div>
         </div>
-        <div class="col col-lg-6">
+        <div class="col-12 col-lg-6">
             <h3>Read</h3>
-            <ul>
-
+            <hr class="pb-3">
+            <div class="row">
                 {{#each books}}
                     {{#if isRead}}
-                        <li>{{id}}. <a href="{{link}}" target="_blank">{{name}}</a> <button class="btn btn-secondary delete-me" data-id="{{id}}">Delete</button></li>
+                        <div class="col-12 pb-2">
+                            <div class="card book read">
+                                <div class="card-body" style="padding: 0.75rem 1.25rem">
+
+                                    <table class="w-100">
+                                        <tr>
+                                            <td style="width:60%"><span class="align-middle"><span class="text-muted">({{id}})</span> {{name}}</span></td>
+                                            <td style="width:40%" class="text-right">    
+                                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                    <button type="button" class="btn btn-secondary read-me-again" data-id="{{id}}">Read Again</button>
+                                                    <button type="button" class="btn btn-secondary delete-me" data-id="{{id}}">Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     {{/if}}
                 {{/each}}
-
-            </ul>
+            </div>
         </div>
     </div>
 </div>

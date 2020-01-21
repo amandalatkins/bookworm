@@ -37,6 +37,21 @@ $('#addNewBook').on("click",function(e) {
     }).then(data => location.reload());
 });
 
-$(".read-again").on("click", function(e) {
+$(".read-me-again").on("click", function(e) {
     e.preventDefault();
+    $.ajax({
+        type: "PUT",
+        url: "/api/books/"+$(this).data('id'),
+        data: { isRead: 0 }
+    }).then(data => {
+        location.reload();
+    });
+});
+
+var classes = ["red","blue","yellow","purple","teal"];
+var i = 0;
+$('.book').each(function(book) { 
+    if (i === classes.length) i = 0;
+    $(this).addClass(classes[i]);
+    i++;
 });

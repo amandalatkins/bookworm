@@ -6,11 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BookWorm: Straighten-Out Your To-Read List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css"/>
 </head>
 <body>
+
+    <div class="jumbotron text-center pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-md-5 text-right">
+                    <img src="/assets/img/bookPile.png">
+                </div> 
+                <div class="col-8 col-md-7 text-left">     
+                    <h1 class="display-4 pt-md-3">BookWorm</h1>
+                    <p class="lead py-2">Straighten-Out Your To-Read Pile!</p>
+                    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#addModal">
+                        Add a Book
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add a Book</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-left">
+                        <form>
+                            <div class="form-group">
+                                <label for="bookName"><strong>Book Title:</strong></label>
+                                <input type="input" class="form-control" id="bookName" placeholder="East of Eden">
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="bookLink"><strong>Link:</strong></label>
+                                <input type="input" class="form-control" id="bookLink" placeholder="https://www.indiebound.org/book/9780140186390">
+                                <small class="text-muted">Please support your local bookstore!</small>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="addNewBook">Add Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {{{body}}}
+
+    <hr>
+    <div class="jumbotron jumbotron-fluid text-center py-2">
+        <div class="container">
+            <img src="/assets/img/books.png" style="width:100px;height:auto"><br>
+            <small><a href="http://www.freepik.com" style="color:#adb5bd">Art by Freepik</a></small>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="/assets/js/app.js"></script>
 </body>
 </html>

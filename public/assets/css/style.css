@@ -1,0 +1,115 @@
+body {
+    /* background-color: #cddfda; */
+    background-color: #f8f9fa;
+}
+
+h3 {
+    font-family: "Pacifico",sans-serif;
+    color: #495057;
+}
+
+.book {
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    /* margin-top:  */
+}
+
+.book a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.book .btn-light {
+    background-color: #fff;
+    border: none;
+}
+
+.book .card-subtitle {
+    opacity: 0.5;
+    color: #fff;
+}
+
+.book.purple {
+    background-color: #542c37;
+}
+
+.book.purple .btn-light {
+    color: #542c37;
+}
+
+.book.blue {
+    color: #fff;
+    background-color: #2f6e85;
+    border-color: #df0031;
+}
+
+.book.blue .btn-light {
+    color: #2f6e85;
+}
+
+.book.red {
+    background-color: #df0031;
+}
+
+.book.red .btn-light {
+    color: #df0031;
+}
+
+.book.yellow {
+    background-color: #f5ae00;
+}
+
+.book.yellow .btn-light {
+    color: #f5ae00;
+}
+
+.book.teal {
+    background-color: #25b1b6;
+}
+
+.book.teal .btn-light {
+    color: #25b1b6;
+}
+
+.book.read {
+    color: #6c757d;
+    background-color: #e9ecef;
+}
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.jumbotron h1 {
+    font-family: "Pacifico", sans-serif;
+    color: #25b1b6;
+}
+
+.jumbotron img {
+    /* width: 150px; */
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.jumbotron .lead {
+    font-size: 1.5rem;
+    color: #25b1b6;
+}
+
+.jumbotron .btn-danger {
+    background-color: #df0031;
+    border: none;
+}
+
+.modal .btn-primary {
+    background-color: #25b1b6;
+    border: none;
+}
+
+.modal .modal-header {
+    background-color: #25b1b6;
+    color: #fff;
+    font-family: "Pacifico",sans-serif;
+}
