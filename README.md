@@ -1,6 +1,4 @@
 # BookWorm
-
-# Summary
 Are you a book lover? Is your To-Read pile unweildy? BookWorm is here to help! This app allows you to store book titles and links to more information so you can get organized and get reading. Once you've read a book, just click "I Read It!", and it will move to your "Done" list where you can watch your finished books pile up! It doesn't end there-- If you loved the book you can always click "Read Again" to move it back to your To-Read Pile; if you hated it, click "Delete" as your first step to forgetting it forever!
 
 ## Screenshots
@@ -112,12 +110,13 @@ module.exports = {
 ```
 
 ## Learning Points:
-* The practice of creating my own ORM helped 
-* Callbacks: I learned a ton about using callbacks (and pulled my hair out more than once!) in the course of building this app as callbacks were crucial to handling database query responses effectively in an asyncronous environment.
+* The practice of creating my own ORM helped me understand how ORM packages work in their simplest form, as well as helped me learn best practices for implementing them.
+* Great practice working with a Model-View-Controller design pattern and architecting my application with those principles in mind.
 
 ## Built With
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [NodeJS](https://nodejs.org/)
+* [MySQL](https://dev.mysql.com/downloads/mysql/
 * Node Packages:
     * [MySQL](https://www.npmjs.com/package/mysql)
     * [DotEnv](https://www.npmjs.com/package/dotenv)
