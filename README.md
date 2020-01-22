@@ -8,13 +8,13 @@ Are you a book lover? Is your To-Read pile unweildy? BookWorm is here to help! T
 ## Try it Out!
 [Click here to try the demo!](https://floating-reef-93891.herokuapp.com/)
 
-# Installation
+# Installation Your Own Instance
 
 ## Prerequisites
 * [NodeJS](https://nodejs.org/)
 * [MySQL](https://dev.mysql.com/downloads/mysql/)
 
-## Installing
+## Instructions
 
 Run the following commands in your preferred CLI to install the Node package and all dependencies:
 
@@ -59,7 +59,9 @@ Start the application by using the following command:
 npm start
 ```
 
-# About BookWorm
+Open the application in your preferred web browser by visiting `http://localhost:3000`. Enjoy!
+
+# Technical Information
 
 ## Code Snippets
 
@@ -116,7 +118,7 @@ module.exports = {
 ## Built With
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [NodeJS](https://nodejs.org/)
-* [MySQL](https://dev.mysql.com/downloads/mysql/
+* [MySQL](https://dev.mysql.com/downloads/mysql/)
 * Node Packages:
     * [MySQL](https://www.npmjs.com/package/mysql)
     * [DotEnv](https://www.npmjs.com/package/dotenv)
