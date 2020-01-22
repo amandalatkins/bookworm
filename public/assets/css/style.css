@@ -72,6 +72,14 @@ h3 {
     color: #25b1b6;
 }
 
+.book.no-books {
+    background-color: #868e96 !important;
+}
+
+.book.no-books .btn-light {
+    color: #868e96 !important;
+}
+
 .book.read {
     color: #6c757d;
     background-color: #e9ecef;
@@ -112,4 +120,9 @@ h3 {
     background-color: #25b1b6;
     color: #fff;
     font-family: "Pacifico",sans-serif;
+}
+
+.count {
+    font-family: "Arial",sans-serif;
+    float: right;
 }

@@ -55,3 +55,35 @@ $('.book').each(function(book) {
     $(this).addClass(classes[i]);
     i++;
 });
+
+// Appends a message to the "Done Pile" if it is empty
+
+if ($('.done-pile').text().trim() === "") {
+    console.log("nothing in done pile");
+
+    var names = [];
+    $('.book:not(.no-books)').each(function() {
+        names.push($(this).data('title'));
+    });
+
+    var html = `<div class="col-12 pb-2">`;
+    html += `<p class="done-empty-caption">`;
+
+    if (names.length) {
+        var randIndex = Math.floor(Math.random() * names.length);
+        var randTitle = names[randIndex];
+        html += 'Grab a warm blanket, a hot cup of tea, and crack open <strong>'+randTitle+'</strong>! Bonus points if you\'re in a rocking chair.';
+    } else {
+        html += `Grab a warm blanket, a hot cup of tea, and crack open a book! Bonus points if you're in a rocking chair.`;
+    }
+
+    html += "</p></div>";
+
+    $('.done-pile').html(html);
+
+}
+
+// Does the To-Read and Done counts
+
+$('.count.done').text($('.done-pile .book').length);
+$('.count.to-read').text($('.read-pile .book:not(.no-books)').length);
