@@ -6,7 +6,7 @@ Are you a book lover? Is your To-Read pile unweildy? BookWorm is here to help! T
 ![With Finished Books](/public/assets/img/screenshot2.jpg)
 
 ## Try it Out!
-[Click here to try the demo!](https://floating-reef-93891.herokuapp.com/)
+[Click here to try the demo!](https://hibookworm.herokuapp.com/)
 
 # Installation Your Own Instance
 
