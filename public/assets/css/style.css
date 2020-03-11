@@ -23,9 +23,15 @@ h3 {
 }
 
 .book.read img {
-    max-width: 35px;
+    height: 55px;
     border-radius: 3px;
     margin-right: 10px;
+}
+
+.book.read span.align-middle {
+    max-height: 55px;
+    overflow: hidden;
+    display: block;
 }
 
 .book a {

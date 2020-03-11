@@ -9,18 +9,10 @@
                     {{#unless isRead}}
                         <div class="col-6 col-md-6 col-lg-4 py-3">
                             <div class="card h-100 book" data-title="{{name}}" style="background-image:url({{cover}})">
-                                <div class="card-body text-center h-100 pb-0">
-                                    {{!-- <p class="card-subtitle mb-2">({{name}})</p> --}}
-                                    {{!-- <h5 class="card-title">{{name}}</h5> --}}
-                                    {{!-- <p class="mb-0"><a href="{{link}}" target="_blank">Learn More</a></p> --}}
-                                </div>
-                                {{!-- <p>
-                                <a href="{{link}}" target="_blank" class="btn btn-light"><i class="fas fa-info"></i></a>
-                                <button class="btn btn-light m-3 read-me" data-id="{{id}}"><i class="fas fa-check"></i></button>
-                                </p> --}}
+                                <div class="card-body text-center h-100 pb-0"></div>
                                 <div class="btn-group btn-group-sm" role="group">
-                                    <a href="{{link}}" target="_blank" class="btn btn-light" data-id="">Info</a>
-                                    <button type="button" class="btn btn-light read-me" data-id="1">Read!</button>
+                                    <a href="{{link}}" target="_blank" class="btn btn-light">Info</a>
+                                    <button type="button" class="btn btn-light read-me" data-id="{{id}}">Read!</button>
                                 </div>
                             </div>
 
