@@ -29,33 +29,56 @@ $('#searchBook').on('click',function(e) {
     e.preventDefault();
     $('#searchResults').empty();
     let searchTerms = $('#bookName').val();
+
+    // If the user didn't enter anything, let's search randomly for one of my favorite books
+    if (!searchTerms.length) {
+
+        var favBooks = ["Lord of the Rings", "Rebecca daphne du maurier", "Harry Potter", "East of Eden", "Jayber Crow"]
+
+        var randIndex = Math.floor(Math.random() * favBooks.length);
+
+        searchTerms = favBooks[randIndex];
+        $('#bookName').val(searchTerms);
+    }
+
+    $('body').addClass('loading');
     $.get('/api/search/'+searchTerms)
-    .then(postResults);
+    .then(res => { console.log(res); postResults(res) });
 });
 
 function postResults(books) {
-    console.log(books);
+
+    $('body').removeClass('loading');
+    
     books.forEach(function(book) {
-        var html = "<tr>";
-        html += `<td><img src="${book.coverImg}"/></td>`;
-        html += `<td><h5>${book.title}</h5>`;
-        html += `<p><strong>${book.authors}</strong> | ${book.format}</p>`;
-        html += `<p><a href="${book.url}" target="_blank">Learn More</a></p>`;
-        html += "</tr>";
-        $('#searchResults').append(html);
+
+        var newRow = $('<tr>');
+        newRow.append(`<td><img src="${book.cover}"/></td>`);
+
+        var infoTd = $('<td>').addClass('book-info');
+        infoTd.append(`<h5>${book.name}</h5>`);
+        
+        infoTd.append(`<p><strong>${book.authors}</strong> | ${book.format}</p>`);
+        infoTd.append(`<a href="${book.link}" target="_blank" class="btn btn-small btn-secondary">Learn More</a>`);
+
+        var addBtn = $('<button>').addClass('addBook btn btn-small btn-primary').text('Add to List').data(book);
+        infoTd.append(addBtn);
+
+        newRow.append(infoTd);
+
+        $('#searchResults').append(newRow);
     });
 }
-
-$('#addNewBook').on("click",function(e) {
+$(document).on('click', '.addBook', function(e) {
+    // console.log('click');
+// $('.addBook').on("click",function(e) {
     e.preventDefault();
+    console.log($(this).data());
     $.ajax({
         type: "POST",
         url: "/api/books",
-        data: {
-            name: $('#bookName').val().trim(),
-            link: $('#bookLink').val().trim()
-        }
-    }).then(data => location.reload());
+        data: $(this).data()
+    }).then(_ => location.reload());
 });
 
 $(".read-me-again").on("click", function(e) {

@@ -52,13 +52,13 @@ router.get("/api/search/:title", (req,res) => {
         books.each(function() {
 
             var bookObj = {
-                coverImg: $(this).find('.ababook-search-result-cover-image > a > img').attr('src'),
-                url: "https://www.indiebound.org" + $(this).find('.ababook-search-result-cover-image > a ').attr('href'),
-                title: $(this).find('.ababook-search-result-info > h2 > a').text(),
+                cover: $(this).find('.ababook-search-result-cover-image > a > img').attr('src'),
+                link: "https://www.indiebound.org" + $(this).find('.ababook-search-result-cover-image > a ').attr('href'),
+                name: $(this).find('.ababook-search-result-info > h2 > a').text(),
                 authors: $(this).find('.ababook-search-result-info > h3').text()
             }
 
-            bookObj.format = $(this).find('.ababook-search-result-info > h2').text().replace(bookObj.title+" ", '').replace('(','').replace(')', '');
+            bookObj.format = $(this).find('.ababook-search-result-info > h2').text().replace(bookObj.name+" ", '').replace('(','').replace(')', '');
 
             if (bookObj.format === "Hardcover" || bookObj.format === "Paperback") {
                 storeBooks.push(bookObj);

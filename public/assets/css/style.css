@@ -12,7 +12,20 @@ h3 {
     border-radius: 10px;
     border: none;
     color: #fff;
-    /* margin-top:  */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 230px;
+}
+
+.book.read {
+    min-height: 0px;
+}
+
+.book.read img {
+    max-width: 35px;
+    border-radius: 3px;
+    margin-right: 10px;
 }
 
 .book a {
@@ -23,6 +36,7 @@ h3 {
 .book .btn-light {
     background-color: #fff;
     border: none;
+    text-decoration: none;
 }
 
 .book .card-subtitle {
@@ -134,6 +148,23 @@ h3 {
 .done-buttons {
     width: 40%;
     text-align: right;
+}
+
+.book-info {
+    vertical-align: top;
+    padding-left: 10px;
+}
+
+.book-info .btn:first-of-type {
+    margin-right: 5px;
+}
+
+#searchResults td {
+    padding-bottom: 10px;
+}
+
+.loading {
+    cursor: wait;
 }
 
 @media screen and (max-width: 767px) {
