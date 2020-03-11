@@ -1,6 +1,8 @@
 // Import Express and setup the router
 const express = require("express");
 const router = express.Router();
+const axios = require("axios");
+const cheerio = require('cheerio');
 
 // Import the model (book.js) to use its database functions.
 const book = require("../models/book.js");
@@ -37,6 +39,31 @@ router.delete("/api/books/:id",(req,res) => {
     book.delete(req.params, result => {
         res.status(200).end();
     });
+});
+
+router.get("/api/search/:title", (req,res) => {
+
+    let queryUrl = "https://www.indiebound.org/search/book?keys="+req.params.title;
+    axios.get(queryUrl)
+    .then(results => {
+        let $ = cheerio.load(results.data);
+        let books = $('.ababook-search-result');
+        let storeBooks = [];
+        books.each(function() {
+            storeBooks.push({
+                coverImg: $(this).find('.ababook-search-result-cover-image > a > img').attr('src'),
+                url: "https://www.indiebound.org" + $(this).find('.ababook-search-result-cover-image > a ').attr('href'),
+                title: $(this).find('.ababook-search-result-info > h2 > a').text(),
+                format: $(this).find('.ababook-search-result-info > h2').text().replace($(this).find('.ababook-search-result-info > h2 > a').text()+" ", ''),
+                authors: $(this).find('.ababook-search-result-info > h3').text()
+            });
+        });
+
+        res.json(storeBooks);
+
+    })
+    .catch(err => console.log(err));
+
 });
 
 module.exports = router;
