@@ -1,5 +1,5 @@
 # BookWorm
-Are you a book lover? Is your To-Read pile unweildy? BookWorm is here to help! This app allows you to store book titles and links to more information so you can get organized and get reading. Once you've read a book, just click "I Read It!", and it will move to your "Done" list where you can watch your finished books pile up! It doesn't end there-- If you loved the book you can always click "Read Again" to move it back to your To-Read Pile; if you hated it, click "Delete" as your first step to forgetting it forever!
+Are you a book lover? Is your To-Read pile unweildy? BookWorm is here to help! This app allows you to search books via IndieBound.org (support your local bookstore!) and then add them to your "To Read" list so you can get organized and get reading. Once you've read a book, just click "I Read It!", and it will move to your "Done" list where you can watch your finished books pile up! It doesn't end there-- If you loved the book you can always click "Read Again" to move it back to your To-Read Pile; if you hated it, click "Delete" as your first step to forgetting it forever!
 
 ## Screenshots
 ![No Finished Books](/public/assets/img/screenshot1.jpg)
@@ -114,6 +114,7 @@ module.exports = {
 ## Learning Points:
 * The practice of creating my own ORM helped me understand how ORM packages work in their simplest form, as well as helped me learn best practices for implementing them.
 * Great practice working with a Model-View-Controller design pattern and architecting my application with those principles in mind.
+* Learned how to scrape data from sites and use Cheerio to run jQuery commands to manipulate DOM elements in Node
 
 ## Built With
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -124,6 +125,8 @@ module.exports = {
     * [DotEnv](https://www.npmjs.com/package/dotenv)
     * [Express](https://www.npmjs.com/package/express)
     * [Express Handlebars](https://www.npmjs.com/package/express-handle-bars)
+    * [Axios](https://www.npmjs.com/package/axios)
+    * [Cheerio](https://www.npmjs.com/package/cheerio)
 
 ## Authors
 Amanda Atkins
