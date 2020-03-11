@@ -50,13 +50,19 @@ router.get("/api/search/:title", (req,res) => {
         let books = $('.ababook-search-result');
         let storeBooks = [];
         books.each(function() {
-            storeBooks.push({
+
+            var bookObj = {
                 coverImg: $(this).find('.ababook-search-result-cover-image > a > img').attr('src'),
                 url: "https://www.indiebound.org" + $(this).find('.ababook-search-result-cover-image > a ').attr('href'),
                 title: $(this).find('.ababook-search-result-info > h2 > a').text(),
-                format: $(this).find('.ababook-search-result-info > h2').text().replace($(this).find('.ababook-search-result-info > h2 > a').text()+" ", ''),
                 authors: $(this).find('.ababook-search-result-info > h3').text()
-            });
+            }
+
+            bookObj.format = $(this).find('.ababook-search-result-info > h2').text().replace(bookObj.title+" ", '').replace('(','').replace(')', '');
+
+            if (bookObj.format === "Hardcover" || bookObj.format === "Paperback") {
+                storeBooks.push(bookObj);
+            }
         });
 
         res.json(storeBooks);

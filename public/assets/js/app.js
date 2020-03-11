@@ -25,6 +25,27 @@ $(".delete-me").on("click",function(e) {
     });
 });
 
+$('#searchBook').on('click',function(e) {
+    e.preventDefault();
+    $('#searchResults').empty();
+    let searchTerms = $('#bookName').val();
+    $.get('/api/search/'+searchTerms)
+    .then(postResults);
+});
+
+function postResults(books) {
+    console.log(books);
+    books.forEach(function(book) {
+        var html = "<tr>";
+        html += `<td><img src="${book.coverImg}"/></td>`;
+        html += `<td><h5>${book.title}</h5>`;
+        html += `<p><strong>${book.authors}</strong> | ${book.format}</p>`;
+        html += `<p><a href="${book.url}" target="_blank">Learn More</a></p>`;
+        html += "</tr>";
+        $('#searchResults').append(html);
+    });
+}
+
 $('#addNewBook').on("click",function(e) {
     e.preventDefault();
     $.ajax({

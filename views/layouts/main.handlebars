@@ -37,21 +37,27 @@
                     </div>
                     <div class="modal-body text-left">
                         <form>
-                            <div class="form-group">
-                                <label for="bookName"><strong>Book Title:</strong></label>
-                                <input type="input" class="form-control" id="bookName" placeholder="East of Eden">
-                            </div>
-                        
-                            <div class="form-group">
-                                <label for="bookLink"><strong>Link:</strong></label>
-                                <input type="input" class="form-control" id="bookLink" placeholder="https://www.indiebound.org/book/9780140186390">
-                                <small class="text-muted">Please support your local bookstore!</small>
+                            <div class="row">
+                                <div class="col-9">
+                                    <div class="form-group">
+                                        <input type="input" class="form-control" id="bookName" placeholder="Book Title...">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary w-100" id="searchBook">Search</button>
+                                    </div>
+                                </div>
                             </div>
                         </form>
+
+                        <table id="searchResults">
+
+                        </table>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="addNewBook">Add Book</button>
+                        {{!-- <button type="button" class="btn btn-primary" id="addNewBook">Add Book</button> --}}
                     </div>
                 </div>
             </div>
